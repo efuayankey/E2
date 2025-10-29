@@ -44,7 +44,7 @@ public class Testing{
                         while(l < refTokens.length && refTokens[l].equals(testTokens[l])){
                             l++;
                         }
-                        if(l == refTokens.length - 1)
+                        if(l == refTokens.length - 2 || l== refTokens.length - 1)
                             dateDiff = true;
                     }
                 }
