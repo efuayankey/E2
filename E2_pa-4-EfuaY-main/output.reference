@@ -1,0 +1,108 @@
+=== Directory Manipulation ===
+
+Analyzing directory: .
+═══════════════════════════════════════
+    Directory Analysis Results
+═══════════════════════════════════════
+Directory: .
+Analysis Date: Sat Sep 27 15:37:47 EDT 2025
+
+SUMMARY:
+--------
+Total Size: 260.39 KB (266,643 bytes)
+Files: 21
+Directories: 6
+
+LARGEST FILE:
+-------------
+Size: 128.65 KB
+File: /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./tree/prog.exe
+
+SIZE BY FILE TYPE:
+------------------
+no extension   :            55 B (  0.0%)
+sh             :           286 B (  0.1%)
+csv            :           849 B (  0.3%)
+md             :         2.74 KB (  1.1%)
+reference      :         5.25 KB (  2.0%)
+class          :        14.44 KB (  5.5%)
+java           :        21.72 KB (  8.3%)
+txt            :        86.44 KB ( 33.2%)
+exe            :       128.65 KB ( 49.4%)
+
+═══════════════════════════════════════
+    Cleaning the directory
+═══════════════════════════════════════
+Folder "/home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./folder_3" removed successfully
+File " /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./tree/folder_1/empty.txt" removed successfully
+
+═══════════════════════════════════════
+    Finding a file in the directory
+═══════════════════════════════════════
+File "Test.java" found in /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./tree/Test.java
+File "Test.java" found in /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./tree/folder_2/Test.java
+File "Test.java" found in /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./Test.java
+File "blahblah" not found in .
+
+═══════════════════════════════════════
+    Finding a word in the directory
+═══════════════════════════════════════
+"list" found 12 times in /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./DirectoryManipulation.java
+"list" found 5 times in /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./tree/folder_2/pa_4.MD
+"list" found 7 times in /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./tree/folder_2/bee_movie.txt
+"list" found 7 times in /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./output.reference
+"list" found 2 times in /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./Test.java
+Word "877541" not found in .
+
+Analyzing directory: ./tree
+═══════════════════════════════════════
+    Directory Analysis Results
+═══════════════════════════════════════
+Directory: ./tree
+Analysis Date: Sat Sep 27 15:37:47 EDT 2025
+
+SUMMARY:
+--------
+Total Size: 219.04 KB (224,302 bytes)
+Files: 9
+Directories: 4
+
+LARGEST FILE:
+-------------
+Size: 128.65 KB
+File: /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./tree/prog.exe
+
+SIZE BY FILE TYPE:
+------------------
+sh             :           166 B (  0.1%)
+java           :           228 B (  0.1%)
+csv            :           849 B (  0.4%)
+md             :         2.74 KB (  1.3%)
+txt            :        86.44 KB ( 39.5%)
+exe            :       128.65 KB ( 58.7%)
+
+═══════════════════════════════════════
+    Cleaning the directory
+═══════════════════════════════════════
+No files deleted. ./tree does have any empty files or directories
+
+═══════════════════════════════════════
+    Finding a file in the directory
+═══════════════════════════════════════
+File "Test.java" found in /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./tree/Test.java
+File "Test.java" found in /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./tree/folder_2/Test.java
+File "blahblah" not found in ./tree
+
+═══════════════════════════════════════
+    Finding a word in the directory
+═══════════════════════════════════════
+"list" found 5 times in /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./tree/folder_2/pa_4.MD
+"list" found 7 times in /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./tree/folder_2/bee_movie.txt
+Word "691715" not found in ./tree
+
+TESTING EDGE CASES:
+===================
+Testing: null -> Exception: IllegalArgumentException - Directory path cannot be null or empty
+Testing: '' -> Exception: IllegalArgumentException - Directory path cannot be null or empty
+Testing: '/nonexistent/path' -> Exception: IllegalArgumentException - Directory does not exist: /nonexistent/path
+Testing: './Pair.java' -> Exception: IllegalArgumentException - Path is not a directory: /home/houdghiri/Fall_2025/CSE017/PAs/PA_4/./Pair.java

@@ -1,0 +1,25 @@
+CSE012,Introduction to Programming in Pyhton,3
+CSE017,Programming and Data Structures,3
+CSE127,Survey of Artificial Intelligence,3
+CSE160,Introduction to Data Science,3
+CSE190,Special Topics,2
+DES025,Costume Construction,2
+DES072,Web Design,4
+DES111,Sound Design,2
+EES015,Volcanoes and the Ring of Fire,3
+EES021,Dynamic Earth,3
+EES025,Observing and Studying Nature,3
+EES028,Conservation and Biodiversity,3
+ECO001,Principles of Economics,4
+ECO045,Statistical Methods,3
+ECE033,Introduction to Computer Engineering,4
+ECE108,Signals and Systems,4
+ECE202,Introduction to Electromagnetics,3
+ISE131,Work Systems and Operations Management,3
+ISE172,ALgorithms in Systems Engineering,4
+MATH021,Calculus I,4
+MATH022,Calculus II,4
+MATH023,Calculus III,4
+PSYC100,Intriduction to Psychology,4
+PSYC107,CHild Development,4
+PSYC117,Cognitive Psychology,4

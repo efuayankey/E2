@@ -1,0 +1,128 @@
+Test case 1: Admitting patients to the Emergency Room
+Patient P-100 admitted to the emergency room
+Patient P-033 admitted to the emergency room
+Patient P-150 admitted to the emergency room
+Patient P-055 admitted to the emergency room
+Patient P-200 admitted to the emergency room
+Patient P-083 admitted to the emergency room
+Patient P-099 admitted to the emergency room
+Patient P-120 admitted to the emergency room
+Patient P-079 admitted to the emergency room
+Patient P-333 admitted to the emergency room
+Patient P-121 admitted to the emergency room
+Patient P-061 admitted to the emergency room
+Patient P-101 admitted to the emergency room
+Patient P-999 admitted to the emergency room
+Patient P-221 admitted to the emergency room
+
+Test case 2: List of patients admitted to the ER
+P-100     	John Clark                    	45   	CRITICAL  	2025-10-14 14:52:48
+P-200     	Mattie Poquette               	65   	CRITICAL  	2025-10-14 14:52:52
+P-061     	Dyan Oldroyd                  	57   	CRITICAL  	2025-10-14 14:52:59
+P-033     	Lisa Zuppe                    	25   	URGENT    	2025-10-14 14:52:49
+P-055     	Lena Paprocki                 	37   	URGENT    	2025-10-14 14:52:51
+P-099     	Sage Wieser                   	18   	URGENT    	2025-10-14 14:52:54
+P-333     	Ezekiel Chui                  	22   	URGENT    	2025-10-14 14:52:57
+P-101     	Abel Maclead                  	68   	URGENT    	2025-10-14 14:53:00
+P-150     	Solange Shinko                	71   	STANDARD  	2025-10-14 14:52:50
+P-120     	Bernardo Figeroa              	27   	STANDARD  	2025-10-14 14:52:55
+P-079     	Charlie Brown                 	19   	STANDARD  	2025-10-14 14:52:56
+P-999     	Francine Vocelka              	21   	STANDARD  	2025-10-14 14:53:01
+P-083     	Fletcher Flosi                	32   	NON_URGENT	2025-10-14 14:52:53
+P-121     	Kris Marrier                  	23   	NON_URGENT	2025-10-14 14:52:58
+P-221     	Erick Ferencz                 	20   	NON_URGENT	2025-10-14 14:53:02
+
+Test case 3: Moving some patients to the treatment rooms
+Medical Record MR-001 added
+Prescription M-001 issued
+Medical Record MR-002 added
+Prescription M-002 issued
+Medical Record MR-003 added
+Prescription M-003 issued
+Medical Record MR-004 added
+Prescription M-004 issued
+Medical Record MR-005 added
+Prescription M-005 issued
+
+Test case 4: Filling some prescriptions
+Prescription M-001 filled
+Prescription M-002 filled
+Prescription M-003 filled
+
+Test case 5: Completing the treatment of some patients
+Patient P-100 treatment completed
+Patient P-200 treatment completed
+
+Test case 6: List of patients waiting in the ER
+P-099     	Sage Wieser                   	18   	URGENT    	2025-10-14 14:52:54
+P-333     	Ezekiel Chui                  	22   	URGENT    	2025-10-14 14:52:57
+P-101     	Abel Maclead                  	68   	URGENT    	2025-10-14 14:53:00
+P-150     	Solange Shinko                	71   	STANDARD  	2025-10-14 14:52:50
+P-120     	Bernardo Figeroa              	27   	STANDARD  	2025-10-14 14:52:55
+P-079     	Charlie Brown                 	19   	STANDARD  	2025-10-14 14:52:56
+P-999     	Francine Vocelka              	21   	STANDARD  	2025-10-14 14:53:01
+P-083     	Fletcher Flosi                	32   	NON_URGENT	2025-10-14 14:52:53
+P-121     	Kris Marrier                  	23   	NON_URGENT	2025-10-14 14:52:58
+P-221     	Erick Ferencz                 	20   	NON_URGENT	2025-10-14 14:53:02
+
+Test case 7: List of patients waiting for treatment
+P-061     	Dyan Oldroyd                  	57   	CRITICAL  	2025-10-14 14:52:59
+P-033     	Lisa Zuppe                    	25   	URGENT    	2025-10-14 14:52:49
+P-055     	Lena Paprocki                 	37   	URGENT    	2025-10-14 14:52:51
+
+Test case 8: Average waiting time by severity
+Average waiting time for patients with severity "URGENT" = 32.00 seconds
+Average waiting time for patients with severity "STANDARD" = 33.50 seconds
+Average waiting time for patients with severity "NON_URGENT" = 31.33 seconds
+
+Test case 9: Number of patients by severity
+Number of patients with severity "URGENT" = 3
+Number of patients with severity "STANDARD" = 4
+Number of patients with severity "NON_URGENT" = 3
+
+Test case 10: Treatment Room Utilization
+Treatment room utilization = 60.00%
+
+Test case 11: History of operations in the ER
+ER operation --> Patient treated:P-200
+ER operation --> Patient treated:P-100
+ER operation --> Prescription filled:M-003
+ER operation --> Prescription filled:M-002
+ER operation --> Prescription filled:M-001
+ER operation --> Prescription issued:M-005
+ER operation --> Medical Record added:MR-005
+ER operation --> Treat Patient:P-055
+ER operation --> Prescription issued:M-004
+ER operation --> Medical Record added:MR-004
+ER operation --> Treat Patient:P-033
+ER operation --> Prescription issued:M-003
+ER operation --> Medical Record added:MR-003
+ER operation --> Treat Patient:P-061
+ER operation --> Prescription issued:M-002
+ER operation --> Medical Record added:MR-002
+ER operation --> Treat Patient:P-200
+ER operation --> Prescription issued:M-001
+ER operation --> Medical Record added:MR-001
+ER operation --> Treat Patient:P-100
+ER operation --> Admit Patient:P-221
+ER operation --> Admit Patient:P-999
+ER operation --> Admit Patient:P-101
+ER operation --> Admit Patient:P-061
+ER operation --> Admit Patient:P-121
+ER operation --> Admit Patient:P-333
+ER operation --> Admit Patient:P-079
+ER operation --> Admit Patient:P-120
+ER operation --> Admit Patient:P-099
+ER operation --> Admit Patient:P-083
+ER operation --> Admit Patient:P-200
+ER operation --> Admit Patient:P-055
+ER operation --> Admit Patient:P-150
+ER operation --> Admit Patient:P-033
+ER operation --> Admit Patient:P-100
+
+Test case 12: Undoing the last five operations
+Undoing ER operation --> Patient treated:P-200
+Undoing ER operation --> Patient treated:P-100
+Undoing ER operation --> Prescription filled:M-003
+Undoing ER operation --> Prescription filled:M-002
+Undoing ER operation --> Prescription filled:M-001

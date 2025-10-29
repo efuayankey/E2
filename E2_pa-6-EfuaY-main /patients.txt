@@ -1,0 +1,15 @@
+P-100,John Clark,45,CRITICAL,Chest pain
+P-033,Lisa Zuppe,25,URGENT,High fever
+P-150,Solange Shinko,71,STANDARD,Stomach pain
+P-055,Lena Paprocki,37,URGENT,Uncontrolled bleeding
+P-200,Mattie Poquette,65,CRITICAL,Difficulty breathing
+P-083,Fletcher Flosi,32,NON_URGENT,Low-grade fever
+P-099,Sage Wieser,18,URGENT,Severe abdominal pain
+P-120,Bernardo Figeroa,27,STANDARD,Minor cut
+P-079,Charlie Brown,19,STANDARD,Minor fracture
+P-333,Ezekiel Chui,22,URGENT,Burns
+P-121,Kris Marrier,23,NON_URGENT,Minor cold
+P-061,Dyan Oldroyd,57,CRITICAL,Loss of consciousness
+P-101,Abel Maclead,68,URGENT,High fever
+P-999,Francine Vocelka,21,STANDARD,Minor Burns
+P-221,Erick Ferencz,20,NON_URGENT,Seasonal allergies

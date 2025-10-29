@@ -1,0 +1,140 @@
+Test case 1: Creating an empty instance of StudentManagement
+0 courses in the student management
+0 students in the student management
+
+Test case 2: Reading data from the text files (testing addCourse, addStudent, enrollStudent)
+25 courses read from the file "courses.txt"
+25 students read from the file "students.txt"
+
+Test case 3: Test finding a course (successfull)
+Course MATH021 found: MATH021           Calculus I                                      4       2         
+2 students are registered in the course
+
+Test case 4: Test finding a course (fail)
+Course PSYC404 not found
+
+Test case 5: Test finding a student (successfull)
+Student with id 1662166 found: 1662166          Lenna,Paprocki                  EES             3.18 
+The student is registered in: [CSE012, EES021, ECO045, ISE131, MATH022]
+
+Test case 6: Test finding a student (fail)
+Student with id 9999999 not found
+
+Test case 7: Test removing a course (successfull)
+Course EES015 found and removed: EES015         Volcanoes and the Ring of Fire                  3       5         
+5 students were registered in the course
+
+Test case 8: Test removing a course (fail)
+Course EES105 not found
+
+Test case 9: Test removing a student (successfull)
+Student with id 5343694 found and removed: 5343694      Minna,Amigon                    CS              4.00 
+The student was registered in: [EES025]
+
+Test case 10: Test removing a student (fail)
+Student with id 9999999 not found
+
+Test case 11: Test dropping a student (successfull)
+Student with id 9619574 was dropped successfully from DES111
+Updated list of courses: [CSE190, MATH022, PSYC100]
+
+Test case 12: Test dropping  a course (student not found)
+Student with id 9999999 not found
+
+Test case 13: Test dropping  a course (course not found)
+Course with number PSYC400 not found
+
+Test case 14: Test dropping  a course (student not enrolled in the course)
+Student with id 2520779 is not enrolled in DES111
+
+Test case 15: Test filter by major
+8 students in the major CSB
+3429750         Art,Venere                      CSB             3.08 
+9619574         Mitsue,Tollner                  CSB             4.00 
+3865358         Leota,Dilliard                  CSB             4.00 
+2003541         Sage,Wieser                     CSB             1.02 
+5504957         Kris,Marrier                    CSB             4.00 
+3941677         Abel,Maclead                    CSB             1.87 
+2498483         Graciela,Ruta                   CSB             3.53 
+8762462         Fletcher,Flosi                  CSB             3.64 
+
+Test case 16: Test get top students
+5 top students:
+6189213         James,Butt                      PSYC            4.00 
+3906208         Josephine,Darakjy               ISE             4.00 
+8225591         Donette,Foller                  ISE             4.00 
+9619574         Mitsue,Tollner                  CSB             4.00 
+3865358         Leota,Dilliard                  CSB             4.00 
+
+Test case 17: Test get students above given gpa
+14 students have a GPA greater than 3.5:
+6189213         James,Butt                      PSYC            4.00 
+3906208         Josephine,Darakjy               ISE             4.00 
+8225591         Donette,Foller                  ISE             4.00 
+9619574         Mitsue,Tollner                  CSB             4.00 
+3865358         Leota,Dilliard                  CSB             4.00 
+5504957         Kris,Marrier                    CSB             4.00 
+7670423         Mattie,Poquette                 DESN            4.00 
+8608030         Gladys,Rim                      ISE             4.00 
+4791137         Willard,Kolmetz                 ISE             4.00 
+1897135         Simona,Morasca                  DESN            3.70 
+8762462         Fletcher,Flosi                  CSB             3.64 
+4892771         Yuki,Whobrey                    PSYC            3.62 
+1351627         Meaghan,Garufi                  ISE             3.57 
+2498483         Graciela,Ruta                   CSB             3.53 
+
+Test case 18: Test getting small courses
+21 courses have less than 5 students:
+CSE012          Introduction to Programming in Pyhton           3       2         
+CSE017          Programming and Data Structures                 3       1         
+CSE127          Survey of Artificial Intelligence               3       4         
+CSE160          Introduction to Data Science                    3       1         
+CSE190          Special Topics                                  2       1         
+DES025          Costume Construction                            2       2         
+DES072          Web Design                                      4       2         
+DES111          Sound Design                                    2       1         
+EES021          Dynamic Earth                                   3       2         
+EES025          Observing and Studying Nature                   3       2         
+EES028          Conservation and Biodiversity                   3       1         
+ECO001          Principles of Economics                         4       4         
+ECO045          Statistical Methods                             3       4         
+ECE033          Introduction to Computer Engineering            4       1         
+ECE202          Introduction to Electromagnetics                3       4         
+ISE172          ALgorithms in Systems Engineering               4       2         
+MATH021         Calculus I                                      4       2         
+MATH022         Calculus II                                     4       3         
+MATH023         Calculus III                                    4       1         
+PSYC100         Intriduction to Psychology                      4       4         
+PSYC117         Cognitive Psychology                            4       1         
+
+Test case 19: Test getting large courses
+3 courses have 5 or more students:
+ECE108          Signals and Systems                             4       5         
+ISE131          Work Systems and Operations Management          3       5         
+PSYC107         CHild Development                               4       6         
+
+Test case 20: Test getting courses sorted by enrollment
+CSE017          Programming and Data Structures                 3       1         
+CSE160          Introduction to Data Science                    3       1         
+CSE190          Special Topics                                  2       1         
+DES111          Sound Design                                    2       1         
+EES028          Conservation and Biodiversity                   3       1         
+ECE033          Introduction to Computer Engineering            4       1         
+MATH023         Calculus III                                    4       1         
+PSYC117         Cognitive Psychology                            4       1         
+CSE012          Introduction to Programming in Pyhton           3       2         
+DES025          Costume Construction                            2       2         
+DES072          Web Design                                      4       2         
+EES021          Dynamic Earth                                   3       2         
+EES025          Observing and Studying Nature                   3       2         
+ISE172          ALgorithms in Systems Engineering               4       2         
+MATH021         Calculus I                                      4       2         
+MATH022         Calculus II                                     4       3         
+CSE127          Survey of Artificial Intelligence               3       4         
+ECO001          Principles of Economics                         4       4         
+ECO045          Statistical Methods                             3       4         
+ECE202          Introduction to Electromagnetics                3       4         
+PSYC100         Intriduction to Psychology                      4       4         
+ECE108          Signals and Systems                             4       5         
+ISE131          Work Systems and Operations Management          3       5         
+PSYC107         CHild Development                               4       6  
