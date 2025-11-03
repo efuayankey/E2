@@ -1,0 +1,375 @@
+**OKAY! FINAL CHEAT SHEET - LET'S GO!** 🔥
+
+---
+
+# **FINAL EXAM CHEAT SHEET - 30 MIN VERSION**
+
+---
+
+## **1. RECURSION PATTERN**
+
+### **Basic Recursion:**
+```java
+public static ReturnType method(params) {
+    // BASE CASE - when to STOP
+    if (stopCondition) {
+        return baseValue;
+    }
+    
+    // RECURSIVE CASE - make problem smaller
+    return method(smallerParams);
+}
+```
+
+### **Recursion with Iterator (EXAM FAVORITE):**
+```java
+// PUBLIC - user calls this
+public static ReturnType methodName(List<Type> list, otherParams) {
+    Iterator<Type> iter = list.iterator();
+    return helper(iter, otherParams);
+}
+
+// PRIVATE - does recursion
+private static ReturnType helper(Iterator<Type> iter, otherParams) {
+    // BASE CASE
+    if (!iter.hasNext()) {
+        return baseValue;
+    }
+    
+    // RECURSIVE CASE
+    Type current = iter.next();
+    // do something with current
+    return helper(iter, otherParams);
+}
+```
+
+### **Recursion Examples:**
+```java
+// Count elements
+private static int countHelper(Iterator<E> iter) {
+    if (!iter.hasNext()) return 0;
+    iter.next();
+    return 1 + countHelper(iter);
+}
+
+// Find matching elements
+private static ArrayList<E> findHelper(Iterator<E> iter, condition) {
+    if (!iter.hasNext()) {
+        return result.isEmpty() ? null : result;
+    }
+    E current = iter.next();
+    if (matchesCondition) {
+        result.add(current);
+    }
+    return findHelper(iter, condition);
+}
+```
+
+---
+
+## **2. GENERIC METHODS PATTERN**
+
+### **Declaration:**
+```java
+public static <E> ReturnType methodName(List<E> list) {
+              ^^^                            ^^^
+              Declare E                      Use E
+    
+    Iterator<E> iter = list.iterator();
+    E element = iter.next();
+}
+```
+
+### **Common Generic Methods:**
+
+**Union (all elements, duplicates OK):**
+```java
+public static <E> void union(List<E> list1, List<E> list2, List<E> list) {
+    Iterator<E> iter1 = list1.iterator();
+    while (iter1.hasNext()) {
+        list.add(iter1.next());
+    }
+    Iterator<E> iter2 = list2.iterator();
+    while (iter2.hasNext()) {
+        list.add(iter2.next());
+    }
+}
+```
+
+**Intersection (only common elements):**
+```java
+public static <E> void intersection(List<E> list1, List<E> list2, List<E> list) {
+    Iterator<E> iter = list1.iterator();
+    while (iter.hasNext()) {
+        E element = iter.next();
+        if (list2.contains(element)) {
+            list.add(element);
+        }
+    }
+}
+```
+
+**Union No Duplicates:**
+```java
+public static <E> void unionNoDuplicates(List<E> list1, List<E> list2, List<E> list) {
+    Iterator<E> iter1 = list1.iterator();
+    while (iter1.hasNext()) {
+        list.add(iter1.next());
+    }
+    Iterator<E> iter2 = list2.iterator();
+    while (iter2.hasNext()) {
+        E element = iter2.next();
+        if (!list.contains(element)) {
+            list.add(element);
+        }
+    }
+}
+```
+
+---
+
+## **3. ITERATOR PATTERN**
+
+```java
+Iterator<E> iter = list.iterator();
+
+while (iter.hasNext()) {           // Check if more elements
+    E element = iter.next();        // Get next element
+    // do something with element
+    
+    if (shouldRemove) {
+        iter.remove();              // Safe removal during iteration
+    }
+}
+```
+
+**Key Methods:**
+- `hasNext()` - Returns true if more elements exist
+- `next()` - Returns next element AND moves forward
+- `remove()` - Removes last element returned by next()
+
+---
+
+## **4. COMPARABLE VS COMPARATOR**
+
+### **Comparable (Natural Ordering - ONE way to sort):**
+```java
+public class Message implements Comparable<Message> {
+    private String sender;
+    
+    @Override
+    public int compareTo(Message other) {
+        return this.sender.compareTo(other.sender);
+    }
+}
+
+// Usage:
+list.sort(null);  // Uses compareTo()
+```
+
+### **Comparator (Custom Ordering - MANY ways to sort):**
+```java
+class ComparatorByRecipient implements Comparator<Message> {
+    @Override
+    public int compare(Message m1, Message m2) {
+        return m1.getRecipient().compareTo(m2.getRecipient());
+    }
+}
+
+class ComparatorByDate implements Comparator<Message> {
+    @Override
+    public int compare(Message m1, Message m2) {
+        return m1.getDate().compareTo(m2.getDate());
+    }
+}
+
+// Usage:
+list.sort(new ComparatorByRecipient());
+list.sort(new ComparatorByDate());
+```
+
+**Return Values (both):**
+- Negative: first comes BEFORE second
+- Zero: equal
+- Positive: first comes AFTER second
+
+---
+
+## **5. BIG-O COMPLEXITY**
+
+### **Quick Reference:**
+- **O(1)** - Constant: `list.get(0)`, `list.add(item)`
+- **O(n)** - Linear: Single loop through n items
+- **O(n²)** - Quadratic: Loop with `contains()` inside, nested loops
+- **O(log n)** - Logarithmic: Binary search
+- **O(n log n)** - Efficient sorting: Merge sort
+
+### **Common Patterns:**
+```java
+// O(n) - single loop
+for (int i = 0; i < n; i++) { }
+
+// O(n) - two separate loops
+for (int i = 0; i < n; i++) { }
+for (int j = 0; j < n; j++) { }
+
+// O(n²) - nested loops
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) { }
+}
+
+// O(n²) - contains() in loop
+for (E item : list1) {
+    if (list2.contains(item)) { }  // contains() is O(n)!
+}
+```
+
+---
+
+## **6. DATA STRUCTURES**
+
+### **ArrayList vs LinkedList:**
+| Operation | ArrayList | LinkedList |
+|-----------|-----------|------------|
+| `get(index)` | O(1) | O(n) |
+| `add(item)` at end | O(1) | O(1) |
+| `add(index, item)` | O(n) | O(1) |
+| `remove(index)` | O(n) | O(1) |
+
+**When to use:**
+- **ArrayList**: Lots of accessing by index
+- **LinkedList**: Lots of inserting/removing in middle
+
+### **Stack (LIFO - Last In First Out):**
+```java
+Stack<E> stack = new Stack<>();
+stack.push(item);      // Add to top
+E item = stack.pop();  // Remove from top
+E item = stack.peek(); // Look at top (don't remove)
+```
+
+### **Queue (FIFO - First In First Out):**
+```java
+Queue<E> queue = new LinkedList<>();
+queue.offer(item);     // Add to back
+E item = queue.poll(); // Remove from front
+E item = queue.peek(); // Look at front (don't remove)
+```
+
+### **PriorityQueue (Smallest/Highest Priority First):**
+```java
+PriorityQueue<E> pq = new PriorityQueue<>();
+pq.offer(item);        // Add item
+E item = pq.poll();    // Remove smallest
+E item = pq.peek();    // Look at smallest
+```
+
+---
+
+## **7. LIST METHODS (Allowed on Exam):**
+
+```java
+int size()                  // O(1) - get size
+Iterator<E> iterator()      // O(1) - get iterator
+boolean add(E item)         // O(1) - add at end
+void add(int index, E item) // O(n) - add at index
+boolean contains(E item)    // O(n) - check if exists
+E get(int index)            // O(1) ArrayList, O(n) LinkedList
+E remove(int index)         // O(n) - remove by index
+```
+
+---
+
+## **8. GENERIC TYPE VS OBJECT**
+
+### **With Object (old way - bad):**
+```java
+public static void print(List<Object> list) {
+    // Only works with List<Object>!
+    // Won't work with List<String>, List<Integer>
+}
+```
+
+### **With Generics (new way - good):**
+```java
+public static <E> void print(List<E> list) {
+    // Works with ANY type!
+}
+```
+
+---
+
+## **9. RESTRICTIONS ON GENERIC TYPE**
+
+### **Can't do:**
+```java
+❌ new E()                    // Can't create instance
+❌ new E[10]                  // Can't create array
+❌ E.staticMethod()           // Can't call static methods
+❌ if (obj instanceof E)      // Can't use instanceof
+```
+
+### **Can do:**
+```java
+✅ E variable = ...           // Declare variables
+✅ List<E> list = ...         // Use in collections
+✅ E[] array = (E[]) new Object[10]  // Cast (with warning)
+```
+
+---
+
+## **10. LINEAR SEARCH (Recursive):**
+
+```java
+public static <E> int linearSearch(List<E> list, E target) {
+    return searchHelper(list.iterator(), target, 0);
+}
+
+private static <E> int searchHelper(Iterator<E> iter, E target, int index) {
+    if (!iter.hasNext()) {
+        return -1;  // Not found
+    }
+    
+    E current = iter.next();
+    if (current.equals(target)) {
+        return index;  // Found at this index
+    }
+    
+    return searchHelper(iter, target, index + 1);
+}
+```
+
+---
+
+## **QUICK EXAM TIPS:**
+
+1. **Always declare `<E>` before return type** in generic methods
+2. **Use `private` for helper methods**, `public` for main method
+3. **Base case first** in recursion - when to STOP
+4. **Use `iter.remove()`** not `list.remove()` when iterating
+5. **`contains()` is O(n)`** - watch for it in loops!
+6. **Import statements:**
+   ```java
+   import java.util.List;
+   import java.util.ArrayList;
+   import java.util.LinkedList;
+   import java.util.Iterator;
+   import java.util.Comparator;
+   import java.util.Stack;
+   import java.util.Queue;
+   import java.util.PriorityQueue;
+   ```
+
+---
+
+## **FINAL REMINDERS:**
+
+✅ Read the problem carefully  
+✅ Identify: Recursion? Generics? Both?  
+✅ Write base case FIRST  
+✅ Test with small examples mentally  
+✅ You have YOUR code available - use it!  
+
+---
+
+**YOU GOT THIS! GO CRUSH THAT EXAM!** 💪🔥🎯

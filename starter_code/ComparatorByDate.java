@@ -4,3 +4,5 @@ class ComparatorByDate implements Comparator<Message> {
         return m1.getDate().compareTo(m2.getDate());
     }
 }
+
+//COMPARATOR has the method compare; and inside te method compare is compareTo()

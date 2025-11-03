@@ -104,7 +104,7 @@ public class Test{
       
         System.out.println("5: Exit");
 
-    }
+    } 
 
     public static void readStates(ArrayList<Pair<String, String>> list, String filename){
         File file = new File(filename);

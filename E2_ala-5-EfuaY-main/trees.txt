@@ -15,7 +15,7 @@ Hemlock|100
 Shagbark Hickory|80
 American Hornbeam|40
 American Larch|60
-Black Locust|82
+Black Locust|82 
 Red Maple|90
 Sugar Maple|75
 Black Oak|150

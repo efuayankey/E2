@@ -1,0 +1,72 @@
+// STEP 1: Public method (user calls this)
+public static ReturnType methodName(List<Type> list, otherParams) {
+    Iterator<Type> iter = list.iterator();  // Create iterator
+    return helper(iter, otherParams);       // Call helper
+}
+
+// STEP 2: Helper method (does the recursion)
+private static ReturnType helper(Iterator<Type> iter, otherParams) {
+    // BASE CASE
+    if (!iter.hasNext()) {
+        return something;
+    }
+    
+    // RECURSIVE CASE
+    Type current = iter.next();
+    // do stuff with current
+    return helper(iter, otherParams);  // Call itself!
+}
+
+
+
+
+EXAMPLE:
+Problem: Count how many even numbers in a list (recursively with iterator)
+// Public method
+public static int countEvens(List<Integer> list) {
+    Iterator<Integer> iter = list.iterator();
+    return countEvensHelper(iter);
+}
+
+// Helper does recursion
+private static int countEvensHelper(Iterator<Integer> iter) {
+    // BASE CASE - no more numbers
+    if (!iter.hasNext()) {
+        return 0;
+    }
+    
+    // Get one number
+    int num = iter.next();
+    
+    // Check if even
+    if (num % 2 == 0) {
+        return 1 + countEvensHelper(iter);  // Count this one + rest
+    } else {
+        return countEvensHelper(iter);       // Just count rest
+    }
+}
+
+
+
+
+
+
+
+   THE RECURSION PATTERN (Memorize This!):
+
+    private static ReturnType helper(Iterator<Type> iter, otherParams) {
+    // BASE CASE
+    if (!iter.hasNext()) {
+        return baseValue;  // What to return when done
+    }
+    
+    // RECURSIVE CASE
+    Type current = iter.next();  // Process ONE element
+    
+    // Do something with current, then RECURSE
+    return something + helper(iter, otherParams);
+}
+
+//helper functions usually takes "Iterator<Type> iter" as a parameter
+So YOU create the iterator inside the public method, then pass it to the helper!
+

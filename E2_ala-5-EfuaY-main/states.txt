@@ -15,7 +15,7 @@ Maryland|Annapolis
 Minnesota|Saint Paul
 Iowa|Des Moines
 Maine|Augusta
-Kentucky|Frankfort
+Kentucky|Frankfort 
 Indiana|Indianapolis
 Kansas|Topeka
 Louisiana|Baton Rouge

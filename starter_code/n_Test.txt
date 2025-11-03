@@ -195,6 +195,24 @@ public class Test{
     }
 }   
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //LinearSearch??
 //writing Genreal methods; to maipulate Data structures; like list or other Collections
  //- genric type vs object
